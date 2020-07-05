@@ -1,0 +1,6 @@
+{
+    "url_base": "https://cdn.star.nesdis.noaa.gov/",
+    "quality": "5424x5424",
+    "satellite": "GOES16",
+    "band": "/ABI/FD/GEOCOLOR/"
+}
