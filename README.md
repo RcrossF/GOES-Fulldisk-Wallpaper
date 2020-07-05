@@ -10,3 +10,6 @@ Updates your (Windows) wallpaper witht the latest fulldisk satellite image from 
 
 # Config
 GOES offers quite a few satellites, image bands, and qualities. These can all be set in the config file. Check em out [here](https://www.star.nesdis.noaa.gov/GOES/fulldisk.php?sat=G16)
+
+# Warning
+If using the max (10848x10848) resolution it will consume ~80MB of data each time an image is fetched, this can add up quickly running it many times a day over weeks. Beware if you have a data cap on your internet. All other resolutions are much smaller and should use negligible data
