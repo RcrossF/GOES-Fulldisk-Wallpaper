@@ -13,14 +13,16 @@ def main():
     except:
         print("Config file could not be opened")
 
-    get_latest(config['url_base'], config['satellite'], config['band'], config['quality'])
+    if get_latest(config['url_base'], config['satellite'], config['band'], config['quality']):
 
-    # Max quality does not have anything added to the image, otherwise remove watermark and metadata
-    if config['quality'] != "10848x10848":
-        crop_watermark("fulldisk.jpg")
+        # Max quality does not have anything added to the image, otherwise remove watermark and metadata
+        if config['quality'] != "10848x10848":
+            crop_watermark("fulldisk.jpg")
 
-    # Set desktop
-    ctypes.windll.user32.SystemParametersInfoW(20, 0, os.path.dirname(os.path.realpath(__file__))+r"\\fulldisk.jpg", 3)
+        # Set desktop
+        ctypes.windll.user32.SystemParametersInfoW(20, 0, os.path.dirname(os.path.realpath(__file__))+r"\\fulldisk.jpg", 3)
+    else:
+        print("Unable to access website")
 
 # Removes watermark and metadata from image
 def crop_watermark(image_path):
@@ -55,8 +57,10 @@ def get_latest(url_base, satellite, band, quality):
     if response.status_code == 200:
         with open('fulldisk.jpg', 'wb') as out_file:
             shutil.copyfileobj(response.raw, out_file)
+        return True
     else:
         print("Error, recieved status code {}".format(response.status_code))
+        return False
 
 
 if __name__ == "__main__":
