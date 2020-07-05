@@ -4,14 +4,13 @@ Updates your (Windows) wallpaper witht the latest fulldisk satellite image from 
 
 # Install
 1. Clone the repo
-2. You might have to associate `.pyw` files with `pythonw.exe`. To do this double click `update_wallpaper.pyw` and find `pythonw.exe` to always open it
-3. Create a new scheduled task in Windows task scheduler to run on logon and every `x` minutes after that
+2. Create a new scheduled task in Windows task scheduler to run on logon and every `x` minutes after that
     - Set the action to "Start a program"
     - The program should be `pythonw.exe`, usually found in `C:\Users\{NAME}\AppData\Local\Programs\Python\Python37\pythonw.exe`
     - Set the command line argument to be the path to `update_wallpaper.pyw`, eg. `C:\Stuff\...\...\GOES-Fulldisk-Wallpaper\update_wallpaper.pyw`
     - Start in should be the repo folder, eg. `C:\Stuff\...\...\GOES-Fulldisk-Wallpaper`
     - Set timeout to 1 minute
-4. If the wallpaper is stretched or tiled go into desktop settings and set the image to "Fit", my personal favourite
+3. If the wallpaper is stretched or tiled go into desktop settings and set the image to "Fit", my personal favourite
 4. Run it manually if you don't want to wait for the task
 
 # Config
