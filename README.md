@@ -14,7 +14,16 @@ Updates your (Windows) wallpaper witht the latest fulldisk satellite image from 
 4. Run it manually if you don't want to wait for the task
 
 # Config
-GOES offers quite a few satellites, image bands, and qualities. These can all be set in the config file. Check em out [here](https://www.star.nesdis.noaa.gov/GOES/fulldisk.php?sat=G16)
+GOES offers quite a few satellites, image bands, and qualities. These can all be set in the config file. Unless NOAA changes their URL, `url_base` should not be changed. The default config is as follows.
+```
+{
+    "url_base": "https://cdn.star.nesdis.noaa.gov/",
+    "quality": "5424x5424",
+    "satellite": "GOES16",
+    "band": "/ABI/FD/GEOCOLOR/"
+}
+```
+Check out all your options [here](https://www.star.nesdis.noaa.gov/GOES/fulldisk.php?sat=G16)
 
 # Warning
-If using the max (10848x10848) resolution it will consume ~80MB of data each time an image is fetched, this can add up quickly running it many times a day over weeks. Beware if you have a data cap on your internet. All other resolutions are much smaller and should use negligible data
+If using the max (10848x10848) resolution it will consume ~80MB of data each time an image is fetched, this can add up quickly running it many times a day over weeks. Beware if you have a data cap on your internet. All other resolutions are much smaller and should use a negligible amount of data
