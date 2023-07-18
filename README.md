@@ -2,6 +2,8 @@
 
 Updates your (Windows) wallpaper witht the latest fulldisk satellite image from NOAA GOES automatically every set period (down to 10 minutes).
 
+![Screenshot 2023-07-17 174316](https://github.com/RcrossF/GOES-Fulldisk-Wallpaper/assets/16991582/2ad45107-78ff-4bb4-b51f-98b716506469)
+
 # Install
 1. Clone the repo
 2. Create a new scheduled task in Windows task scheduler to run on startup and every `x` minutes after that
